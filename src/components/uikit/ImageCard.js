@@ -16,9 +16,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
   },
   h1: {
-    paddingTop: 10,
+    paddingTop: 5,
     fontFamily: 'Roboto',
-    fontSize: 18,
+    fontSize: 16,
+    alignSelf: 'center',
+    textAlign: 'center',
+  },
+  h3: {
+    paddingTop: 2,
+    fontFamily: 'Roboto',
+    fontSize: 12,
     alignSelf: 'center',
     textAlign: 'center',
   },
@@ -30,16 +37,23 @@ const styles = StyleSheet.create({
 });
 
 const ImageCard = ({data, onPress}) => {
-  const {container, sub, h1, cover} = styles;
-  const {image, name} = data;
-  const img = `https${image.medium.slice(4)}`;
+  const {container, sub, h1, h3, cover} = styles;
+  const imgDesc = data.description;
+  const imgSmallLink = data.urls.small;
+  const userName = data.user.first_name;
+
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={container}>
         <View style={sub}>
-          <Image style={cover} source={{uri: img}} />
+          <Image style={cover} source={{uri: imgSmallLink}} />
         </View>
-        <Text style={h1}>{name.toUpperCase()}</Text>
+        {imgDesc ? (
+          <Text style={h1}>{imgDesc.toUpperCase()}</Text>
+        ) : (
+          <Text style={h1}>No name</Text>
+        )}
+        {userName && <Text style={h3}>{userName}</Text>}
       </View>
     </TouchableOpacity>
   );

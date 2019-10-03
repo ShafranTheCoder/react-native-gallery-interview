@@ -15,12 +15,11 @@ const styles = StyleSheet.create({
 
 const ImageBigCard = ({data}) => {
   const {container, sub, cover} = styles;
-  const {image} = data;
-  const img = `https${image.medium.slice(4)}`;
+  const imgBigLink = data;
   return (
     <View style={container}>
       <View style={sub}>
-        <Image style={cover} source={{uri: img}} />
+        <Image style={cover} source={{uri: imgBigLink}} />
       </View>
     </View>
   );

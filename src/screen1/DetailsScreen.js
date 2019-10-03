@@ -1,20 +1,21 @@
 import React, {PureComponent} from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, StyleSheet} from 'react-native';
 
 import {Header, ImageBigCard} from '../components/uikit';
 
 class DetailsScreen extends PureComponent {
   render() {
-    const {image, name, summary} = this.props.navigation.state.params;
     const {navigation} = this.props;
-    const data = {image, name};
-    const {container, h1, h2, sub} = styles;
+    const {description} = this.props.navigation.state.params;
+    const userName = this.props.navigation.state.params.user.first_name;
+    const data = this.props.navigation.state.params.urls.full;
+    const {sub} = styles;
+
     return (
       <View style="container">
         <Header
           detail
-          title={name}
+          title={description ? description : userName}
           onPress={() => navigation.goBack()}
           leftIcon="ios-arrow-back"
           leftColor="#fff"

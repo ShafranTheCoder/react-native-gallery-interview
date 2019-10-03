@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const styles = StyleSheet.create({
   viewStyle: {
     flexDirection: 'row',
-    backgroundColor: '#30d0fe',
+    backgroundColor: '#BD3F32',
     paddingLeft: 20,
     paddingTop: 12,
     position: 'relative',
