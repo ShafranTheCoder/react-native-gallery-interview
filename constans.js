@@ -9,3 +9,4 @@ export const responsive = {
   mobile8plus: w > 375 && w < 415,
   tablet: w < 990 && w > 415,
 };
+export const BLUE = 'blue';

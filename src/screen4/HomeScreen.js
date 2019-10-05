@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import {View, ScrollView} from 'react-native';
 import {Header, ImageCard, Layout} from '../components/uikit';
 
-import {PETS_DETAILS} from '../routes';
+import {FLORAL_DETAILS} from '../routes';
 
 const randomNumber = Math.floor(Math.random() * 10);
-const url = `https://api.unsplash.com/collections/2489501/photos?page=${randomNumber}&&per_page=20&&client_id=cf49c08b444ff4cb9e4d126b7e9f7513ba1ee58de7906e4360afc1a33d1bf4c0`;
+const url = `https://api.unsplash.com/collections/17098/photos?page=${randomNumber}&&per_page=20&&client_id=cf49c08b444ff4cb9e4d126b7e9f7513ba1ee58de7906e4360afc1a33d1bf4c0`;
 
 export default class HomeScreen extends Component {
   state = {
-    title: 'PETS',
+    title: 'FLORAL',
     data: [],
   };
 
@@ -42,7 +42,7 @@ export default class HomeScreen extends Component {
               <ImageCard
                 data={item}
                 key={item.id}
-                onPress={() => navigation.navigate(PETS_DETAILS, item)}
+                onPress={() => navigation.navigate(FLORAL_DETAILS, item)}
               />
             ))}
           </Layout>

@@ -1,12 +1,12 @@
 import {createStackNavigator} from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
-import {PETS_HOME, PETS_DETAILS} from '../routes';
+import {LANDSCAPES_HOME, LANDSCAPES_DETAILS} from '../routes';
 
 export default createStackNavigator(
   {
-    [PETS_HOME]: HomeScreen,
-    [PETS_DETAILS]: DetailsScreen,
+    [LANDSCAPES_HOME]: HomeScreen,
+    [LANDSCAPES_DETAILS]: DetailsScreen,
   },
   {
     headerMode: 'none',

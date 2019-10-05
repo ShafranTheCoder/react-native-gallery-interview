@@ -49,9 +49,11 @@ const ImageCard = ({data, onPress}) => {
           <Image style={cover} source={{uri: imgSmallLink}} />
         </View>
         {imgDesc ? (
-          <Text style={h1}>{imgDesc.toUpperCase()}</Text>
+          <Text numberOfLines={1} ellipsizeMode="tail" style={h1}>
+            {imgDesc.toUpperCase()}
+          </Text>
         ) : (
-          <Text style={h1}>No name</Text>
+          <Text style={h1}>No title</Text>
         )}
         {userName && <Text style={h3}>{userName}</Text>}
       </View>
